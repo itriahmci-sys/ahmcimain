@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="由 Google Sheets 儲存內容的簡潔留言板">
+  <title>留言板</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <svg class="hero-art" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="揮手打招呼的插畫角色">
+        <ellipse cx="80" cy="146" rx="46" ry="8" fill="#E2934C" opacity="0.12"/>
+        <path d="M40 96c0-28 18-46 40-46s40 18 40 46v20c0 6-4 10-10 10H50c-6 0-10-4-10-10z" fill="#E2934C"/>
+        <path d="M40 96c0-28 18-46 40-46s40 18 40 46" fill="none"/>
+        <circle cx="80" cy="62" r="34" fill="#F6D3A8"/>
+        <path d="M48 58c0-20 14-34 32-34s32 14 32 34c-8-6-20-10-32-10s-24 4-32 10z" fill="#8A5A3A"/>
+        <circle cx="68" cy="64" r="3.4" fill="#4A3728"/>
+        <circle cx="92" cy="64" r="3.4" fill="#4A3728"/>
+        <circle cx="60" cy="74" r="6" fill="#E89A7C" opacity="0.55"/>
+        <circle cx="100" cy="74" r="6" fill="#E89A7C" opacity="0.55"/>
+        <path d="M69 78c4 5 18 5 22 0" stroke="#4A3728" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+        <g class="wave">
+          <path d="M112 92c8-4 18-2 22 6 3 6 1 12-4 15" fill="none" stroke="#F6D3A8" stroke-width="13" stroke-linecap="round"/>
+        </g>
+        <path d="M56 108c8 6 20 9 24 9s16-3 24-9" fill="none" stroke="#C97A34" stroke-width="3" stroke-linecap="round" opacity="0.35"/>
+        <circle cx="26" cy="40" r="4" fill="#8FB0BE"/>
+        <circle cx="138" cy="112" r="5" fill="#8FA37B"/>
+        <path d="M132 38l3 6 6 3-6 3-3 6-3-6-6-3 6-3z" fill="#E08975"/>
+      </svg>
+      <p class="eyebrow">健康樂活與智慧醫療照護聯盟留言版</p>
+      <h1>留下你的想法</h1>
+      <p>分享建議、問題，或只是一句問候。</p>
+    </header>
+
+    <section class="card compose" aria-labelledby="form-title">
+      <h2 id="form-title">新增留言</h2>
+      <div class="notice" role="note">
+        <p class="notice-title">溫馨提醒</p>
+        <p>請以友善、尊重及理性的態度留言，避免使用人身攻擊、歧視、謾罵或不實資訊，也請勿公開個人隱私及敏感資料。與主題無關、重複張貼或不當內容，管理者得視情況隱藏或刪除。感謝您的理解與配合。</p>
+        <p class="notice-sign">秘書處敬上</p>
+      </div>
+      <form id="message-form">
+        <label>稱呼 <span>最多 30 字</span>
+          <input id="name" name="name" maxlength="30" autocomplete="name" required>
+        </label>
+        <label>留言 <span id="counter">0 / 500</span>
+          <textarea id="message" name="message" maxlength="500" rows="5" required></textarea>
+        </label>
+        <label class="website" aria-hidden="true">網站
+          <input name="website" tabindex="-1" autocomplete="off">
+        </label>
+        <div class="form-footer">
+          <p id="form-status" role="status"></p>
+          <button id="submit-button" type="submit">送出留言</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="messages" aria-labelledby="messages-title">
+      <div class="section-title">
+        <h2 id="messages-title">最近留言</h2>
+        <button id="refresh-button" class="text-button" type="button">重新整理</button>
+      </div>
+      <div id="message-list" aria-live="polite">
+        <p class="empty">載入中…</p>
+      </div>
+      <button id="load-more" class="load-more" type="button" hidden>載入更多</button>
+    </section>
+  </main>
+  <footer>以 Google Sheets 儲存留言</footer>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
