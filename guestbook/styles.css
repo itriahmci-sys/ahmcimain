@@ -1,0 +1,444 @@
+/* ------------------------------------------------------------
+   留言板 — 淡色溫暖風格
+   Type: "Zen Maru Gothic" 標題（圓潤手寫感）+ "Noto Sans TC" 內文
+   Color: 奶油杏色底 / 蜂蜜橘主色 / 鼠尾草綠點綴 / 霧霾藍點綴
+------------------------------------------------------------- */
+
+@import url("https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap");
+
+:root{
+  --bg: #FBF3E7;
+  --bg-soft: #F5E8D6;
+  --card: #FFFDF9;
+  --ink: #4A3728;
+  --ink-soft: #8A7461;
+  --ink-faint: #B3A08D;
+
+  --honey: #E2934C;
+  --honey-dark: #C97A34;
+  --honey-tint: #F7DFBB;
+
+  --sage: #8FA37B;
+  --sage-tint: #E3EAD9;
+
+  --sky: #8FB0BE;
+  --sky-tint: #DEEBEF;
+
+  --coral: #E08975;
+  --coral-tint: #F7DDD3;
+
+  --border: #ECDBC3;
+  --shadow: 20px 24px 0 -14px rgba(201, 122, 52, 0.10);
+
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+}
+
+*{ box-sizing: border-box; }
+
+html{ -webkit-text-size-adjust: 100%; }
+
+body{
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(680px 420px at 12% -8%, var(--sky-tint) 0%, transparent 60%),
+    radial-gradient(620px 420px at 105% 8%, var(--coral-tint) 0%, transparent 55%),
+    var(--bg);
+  color: var(--ink);
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: no-preference){
+  .wave{ animation: wave 2.6s ease-in-out infinite; transform-origin: 78% 78%; }
+}
+@keyframes wave{
+  0%, 100% { transform: rotate(0deg); }
+  15% { transform: rotate(14deg); }
+  30% { transform: rotate(-8deg); }
+  45% { transform: rotate(14deg); }
+  60% { transform: rotate(-4deg); }
+  75%, 100% { transform: rotate(0deg); }
+}
+
+.shell{
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 56px 20px 40px;
+}
+
+/* ---------- Hero ---------- */
+
+.hero{
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero-art{
+  width: 84px;
+  height: auto;
+  margin: 0 auto 14px;
+  display: block;
+}
+
+.eyebrow{
+  display: block;
+  margin: 0 auto 16px;
+  max-width: 26ch;
+  color: var(--honey-dark);
+  font-family: "Zen Maru Gothic", "Noto Sans TC", sans-serif;
+  font-weight: 700;
+  font-size: clamp(19px, 4.6vw, 25px);
+  line-height: 1.5;
+}
+
+.hero h1{
+  font-family: "Zen Maru Gothic", "Noto Sans TC", sans-serif;
+  font-weight: 700;
+  font-size: clamp(28px, 6vw, 38px);
+  margin: 0 0 10px;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+
+.hero > p:last-child{
+  margin: 0 auto;
+  max-width: 32ch;
+  color: var(--ink-soft);
+  font-size: 15.5px;
+}
+
+/* ---------- Cards ---------- */
+
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 30px 28px;
+}
+
+.compose{ margin-bottom: 36px; }
+
+.compose h2{
+  font-family: "Zen Maru Gothic", "Noto Sans TC", sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+  margin: 0 0 22px;
+  color: var(--ink);
+}
+
+.notice{
+  background: var(--sage-tint);
+  border: 1px solid #D9E4CB;
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  margin-bottom: 24px;
+}
+
+.notice-title{
+  margin: 0 0 6px;
+  font-family: "Zen Maru Gothic", "Noto Sans TC", sans-serif;
+  font-weight: 700;
+  font-size: 14.5px;
+  color: #5C7048;
+}
+
+.notice p:not(.notice-title):not(.notice-sign){
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.75;
+  color: #5C7048;
+}
+
+.notice-sign{
+  margin: 10px 0 0;
+  text-align: right;
+  font-size: 12.5px;
+  font-style: italic;
+  color: #6E8459;
+}
+
+/* ---------- Form ---------- */
+
+#message-form{
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+#message-form label{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+#message-form label span{
+  font-weight: 400;
+  color: var(--ink-faint);
+  font-size: 12.5px;
+}
+
+#message-form input,
+#message-form textarea{
+  font: inherit;
+  font-family: "Noto Sans TC", sans-serif;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border);
+  background: #FEFBF5;
+  color: var(--ink);
+  resize: vertical;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+#message-form input::placeholder,
+#message-form textarea::placeholder{
+  color: var(--ink-faint);
+}
+
+#message-form input:focus,
+#message-form textarea:focus{
+  outline: none;
+  border-color: var(--honey);
+  box-shadow: 0 0 0 4px var(--honey-tint);
+}
+
+.website{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.form-footer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+#form-status{
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--sage);
+  min-height: 1.4em;
+}
+
+#form-status[data-state="error"]{ color: var(--coral); }
+
+button{
+  font-family: inherit;
+  cursor: pointer;
+}
+
+#submit-button{
+  flex: none;
+  border: none;
+  background: var(--honey);
+  color: #FFF9F0;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 12px 26px;
+  border-radius: 999px;
+  box-shadow: 0 6px 0 -2px var(--honey-dark);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+#submit-button:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 -2px var(--honey-dark);
+}
+
+#submit-button:active{
+  transform: translateY(1px);
+  box-shadow: 0 3px 0 -2px var(--honey-dark);
+}
+
+#submit-button:disabled{
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 6px 0 -2px var(--honey-dark);
+}
+
+/* ---------- Messages ---------- */
+
+.section-title{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.section-title h2{
+  font-family: "Zen Maru Gothic", "Noto Sans TC", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  color: var(--ink);
+}
+
+.text-button{
+  border: none;
+  background: none;
+  color: var(--honey-dark);
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: background 0.15s ease;
+}
+
+.text-button:hover{ background: var(--honey-tint); }
+
+/* 由上而下的橫式排版，每則留言一列，最新的留言排在最上方 */
+#message-list{
+  display: flex;
+  flex-direction: column;
+  max-height: 64vh;
+  padding: 10px 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+}
+
+.empty{
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--ink-faint);
+  font-size: 14px;
+  margin: 0;
+}
+
+/* generic message item classes, in case app.js renders these */
+.message-item, .message-card{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.message-item:last-of-type, .message-card:last-of-type{
+  border-bottom: none;
+}
+
+.avatar, .avatar-badge{
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: 700;
+  font-size: 13.5px;
+  color: var(--honey-dark);
+  background: var(--honey-tint);
+}
+
+.message-item:nth-of-type(3n+2) .avatar,
+.message-card:nth-of-type(3n+2) .avatar-badge{
+  background: var(--sage-tint);
+  color: #5C7048;
+}
+
+.message-item:nth-of-type(3n) .avatar,
+.message-card:nth-of-type(3n) .avatar-badge{
+  background: var(--sky-tint);
+  color: #4A6874;
+}
+
+.message-body{ min-width: 0; flex: 1; }
+
+.message-header{
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.message-name{
+  font-weight: 700;
+  font-size: 14.5px;
+  color: var(--ink);
+}
+
+.message-date{
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+
+.message-text{
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  overflow-wrap: anywhere;
+}
+
+.load-more{
+  display: block;
+  margin: 18px auto 0;
+  border: 1.5px solid var(--border);
+  background: var(--card);
+  color: var(--ink-soft);
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 10px 22px;
+  border-radius: 999px;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.load-more:hover{
+  border-color: var(--honey);
+  color: var(--honey-dark);
+}
+
+/* ---------- Footer ---------- */
+
+footer{
+  text-align: center;
+  color: var(--ink-faint);
+  font-size: 12.5px;
+  padding: 32px 20px 12px;
+}
+
+/* ---------- Accessibility ---------- */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible{
+  outline: 2.5px solid var(--honey);
+  outline-offset: 2px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 480px){
+  .shell{ padding: 40px 16px 32px; }
+  .card{ padding: 24px 20px; }
+  .form-footer{ flex-direction: column; align-items: stretch; }
+  #submit-button{ width: 100%; text-align: center; }
+  #message-list{ max-height: 56vh; padding: 6px 14px; }
+}
