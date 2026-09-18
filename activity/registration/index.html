@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="健康樂活與智慧醫療照護聯盟活動報名表">
+  <meta name="theme-color" content="#176b63">
+  <title>健康樂活與智慧醫療照護聯盟｜活動報名</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <header class="hero">
+      <div class="brand-mark">
+        <img src="alliance-logo.png" alt="健康樂活智慧醫療照護聯盟 Logo">
+      </div>
+      <div>
+        <p class="eyebrow">健康樂活與智慧醫療照護聯盟</p>
+        <h1>活動報名</h1>
+        <p class="intro">請填寫以下資料完成活動報名。送出後，主辦單位將依您提供的電子郵件與您聯繫。</p>
+      </div>
+    </header>
+
+    <form id="registrationForm" novalidate>
+      <div class="honeypot" aria-hidden="true">
+        <label for="website">網站</label>
+        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <section class="card privacy-card" aria-labelledby="privacyTitle">
+        <div class="section-heading">
+          <span class="step">01</span>
+          <div><h2 id="privacyTitle">個人資訊使用聲明與同意</h2><p>請先詳閱下列內容</p></div>
+        </div>
+        <div class="privacy-copy">
+          <p>感謝您報名參加健康樂活與智慧醫療聯盟論壇活動。為遵循個人資料保護法，在您提供個人資料前，請務必詳閱以下聲明：</p>
+          <ol>
+            <li><strong>蒐集目的：</strong>本聯盟僅為本次研討會之報名、通知聯繫、報到查驗、會後問卷／資料寄送及活動成效分析等相關行政目的，蒐集、處理及利用您的個人資料。</li>
+            <li><strong>蒐集類別：</strong>姓名、服務單位、職稱、電子郵件、聯絡電話等。</li>
+            <li><strong>利用期間：</strong>自您同意日起至本次研討會結束。</li>
+            <li><strong>利用地區與對象：</strong>僅限於中華民國境內，由本次研討會主辦單位及協辦單位使用。您的資料不會用於其他用途或提供給無關第三方。</li>
+            <li><strong>您的權利：</strong>您可隨時向主辦單位行使個資法規定之權利，包括查詢、閱覽、製給複製本、補充或更正、停止蒐集／處理／利用，或刪除您的個人資料。</li>
+            <li><strong>不同意之影響：</strong>若您不同意提供或提供的資料不完整，本聯盟將無法完成您的報名程序。</li>
+          </ol>
+        </div>
+        <label class="consent-box">
+          <input id="consent" name="consent" type="checkbox" value="同意" required>
+          <span class="checkmark" aria-hidden="true"></span>
+          <span>我已詳閱並同意上述「個人資訊使用聲明」</span>
+        </label>
+        <p class="field-error" data-error-for="consent"></p>
+      </section>
+
+      <section class="card" aria-labelledby="detailsTitle">
+        <div class="section-heading">
+          <span class="step">02</span>
+          <div><h2 id="detailsTitle">報名資料填寫</h2><p><span class="required-dot">＊</span>為必填欄位</p></div>
+        </div>
+
+        <div class="form-grid">
+          <div class="field full">
+            <label for="email">電子郵件地址 <span class="required-dot">＊</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="name@example.com" required>
+            <p class="field-error" data-error-for="email"></p>
+          </div>
+          <div class="field">
+            <label for="name">姓名 <span class="required-dot">＊</span></label>
+            <input id="name" name="name" type="text" autocomplete="name" maxlength="50" placeholder="請輸入姓名" required>
+            <p class="field-error" data-error-for="name"></p>
+          </div>
+          <div class="field">
+            <label for="phone">聯絡電話／手機 <span class="required-dot">＊</span></label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="30" placeholder="例如：0912-345-678" required>
+            <p class="field-error" data-error-for="phone"></p>
+          </div>
+          <div class="field">
+            <label for="organization">服務單位名稱 <span class="required-dot">＊</span></label>
+            <input id="organization" name="organization" type="text" autocomplete="organization" maxlength="100" placeholder="請輸入服務單位" required>
+            <p class="field-error" data-error-for="organization"></p>
+          </div>
+          <div class="field">
+            <label for="jobTitle">職稱 <span class="required-dot">＊</span></label>
+            <input id="jobTitle" name="jobTitle" type="text" autocomplete="organization-title" maxlength="50" placeholder="請輸入職稱" required>
+            <p class="field-error" data-error-for="jobTitle"></p>
+          </div>
+          <fieldset class="field full source-field">
+            <legend>您從何處得知本次研討會？ <span class="required-dot">＊</span></legend>
+            <div class="radio-grid">
+              <label><input type="radio" name="source" value="服務單位是健康樂活與智慧醫療照護聯盟企業會員" required><span>服務單位是聯盟企業會員</span></label>
+              <label><input type="radio" name="source" value="我是在宅醫療學會會員"><span>我是在宅醫療學會會員</span></label>
+              <label><input type="radio" name="source" value="主辦單位電子郵件通知"><span>主辦單位電子郵件通知</span></label>
+              <label><input type="radio" name="source" value="社群媒體"><span>社群媒體</span></label>
+              <label><input type="radio" name="source" value="友人推薦"><span>友人推薦</span></label>
+              <label><input type="radio" name="source" value="公會或協會轉發通知"><span>公會或協會轉發通知</span></label>
+              <label><input type="radio" name="source" value="工研院活動訊息／產業學院活動訊息"><span>工研院／產業學院活動訊息</span></label>
+              <label class="other-option"><input type="radio" name="source" value="其他"><span>其他</span><input id="sourceOther" type="text" maxlength="80" placeholder="請說明" aria-label="其他得知管道"></label>
+            </div>
+            <p class="field-error" data-error-for="source"></p>
+          </fieldset>
+        </div>
+      </section>
+
+      <div class="submit-area">
+        <p>請確認資料正確後送出。</p>
+        <button id="submitButton" type="submit"><span class="button-text">提交報名</span><span class="spinner" aria-hidden="true"></span></button>
+      </div>
+      <div id="formStatus" class="status" role="status" aria-live="polite"></div>
+    </form>
+
+    <footer>
+      <div class="organizer-notice">
+        <strong>主辦單位保留活動更動權利</strong>
+        <span>主辦單位聯絡方式</span>
+        <div class="contact-links">
+          <a href="mailto:itriahmci@gmail.com">itriahmci@gmail.com</a>
+          <a href="mailto:SmartMedHealth@itri.org.tw">SmartMedHealth@itri.org.tw</a>
+        </div>
+      </div>
+      <p>健康樂活與智慧醫療照護聯盟</p>
+    </footer>
+  </main>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
