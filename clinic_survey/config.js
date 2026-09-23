@@ -1,6 +1,6 @@
 window.SURVEY_CONFIG = Object.freeze({
   // 完成 Apps Script 部署後，填入 /exec 網址。未設定時僅供預覽，不會送出。
-  endpoint: 'https://script.google.com/macros/s/AKfycbwd7OQAFSFkipbDrCZj8nQwwObYDOFN2uTGoXKqG9DpyXCYfY_SsaLJA_fXPHAKCO3J/exec',
+  endpoint: 'https://script.google.com/macros/s/AKfycbxoerNgY3cIBcz_MZh_Ts_8WOZU-qO2qQns1JEWz5uvhTNpMhs_ZFoIKBnpDt48QKNy/exec',
   organizer: '健康樂活與智慧醫療照護聯盟', // 主辦／資料管理單位
   contact: 'SmartMedHealth@itri.org.tw', // 撤回與資料問題的 Email 或電話
   retention: '資料僅供研究統計分析使用', // 例如：蒐集截止後 12 個月刪除原始回覆
