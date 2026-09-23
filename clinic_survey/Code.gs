@@ -50,10 +50,13 @@ root.SurveyCore={options,fields,validate,scenario};
 /* Google Apps Script V8。只接受寫入問卷，不提供原始資料讀取 API。
    先在 Google Sheet：擴充功能→Apps Script，貼上本檔，修改下列設定。 */
 const SETTINGS = Object.freeze({
-  allowedOrigins: ['https://itriahmci-sys.github.io'], // 只填來源，沒有儲存庫路徑
-  organizer: '健康樂活與智慧醫療照護聯盟', contact: 'SmartMedHealth@itri.org.tw', Retention: '資料僅供研究統計分析使用',
-  consentVersion:'2026-09-23-v1',surveyVersion:'clinic-survey-1.0',
-  maxRows:50000
+  allowedOrigins: ['https://itriahmci-sys.github.io'],
+  organizer: '健康樂活與智慧醫療照護聯盟',
+  contact: 'SmartMedHealth@itri.org.tw',
+  retention: '資料僅供研究統計分析使用',
+  consentVersion: '2026-09-23-v1',
+  surveyVersion: 'clinic-survey-1.0',
+  maxRows: 50000
 });
 const META=['server_received_at','submission_id','consent_version','survey_version','consent','elapsed_seconds','organizer','retention'];
 function setup(){
