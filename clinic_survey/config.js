@@ -1,6 +1,6 @@
 window.SURVEY_CONFIG = Object.freeze({
   // 完成 Apps Script 部署後，填入 /exec 網址。未設定時僅供預覽，不會送出。
-  endpoint: '',
+  endpoint: 'https://script.google.com/macros/s/AKfycbwd7OQAFSFkipbDrCZj8nQwwObYDOFN2uTGoXKqG9DpyXCYfY_SsaLJA_fXPHAKCO3J/exec',
   organizer: '', // 主辦／資料管理單位
   contact: '', // 撤回與資料問題的 Email 或電話
   retention: '', // 例如：蒐集截止後 12 個月刪除原始回覆
